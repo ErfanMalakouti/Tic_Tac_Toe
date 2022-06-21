@@ -1,0 +1,344 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+
+* {
+  cursor: url("./assets/images/pointer.cur"), auto;
+}
+body {
+  background-image: url(./assets/images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Kaushan Script";
+  overflow: hidden;
+}
+.modal {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+.action-box {
+  background-image: url(./assets/images/war.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  top: 30%;
+  left: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.action-btn {
+  width: 300px;
+  height: 80px;
+  background-color: crimson;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  transform: skewX(-30deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid #c4942c;
+  border-radius: 50% 20% / 10% 40%;
+  z-index: 2;
+}
+.action-btn:hover {
+  transform: skewX(-30deg) scale(1.1);
+}
+.versus {
+  position: relative;
+  width: 100vw;
+  height: 60vh;
+  margin: 10% auto;
+}
+.card {
+  position: absolute;
+  width: 60%;
+  height: 90%;
+  top: 5%;
+  background-color: rgb(25, 25, 25);
+  transform: skewX(-20deg);
+  display: flex;
+  align-items: center;
+  border-right-width: 25px;
+  z-index: 3;
+}
+.champ {
+  background-size: cover;
+  width: 250px;
+  height: 350px;
+  margin: 30px;
+  border: 4px solid #c4942c;
+  border-radius: 50% 20% / 10% 40%;
+}
+/* Red */
+.champ-red {
+  background-image: url(./assets/images/Zed.jpg);
+}
+.champ-card-red {
+  border: 5px solid rgb(148, 1, 1);
+  left: -72%;
+  border-right-width: 25px;
+  justify-content: flex-end;
+}
+.champ-card-red:hover {
+  box-shadow: 0px 0px 400px rgb(218, 39, 74);
+  border-color: rgb(218, 39, 74);
+  z-index: 4;
+}
+.red-active {
+  transition: all 1s;
+  left: -12%;
+}
+.red-inactive {
+  transition: all 1s;
+  left: -72%;
+}
+/* Blue */
+.champ-blue {
+  background-image: url(./assets/images/Yasuo.jpg);
+}
+.champ-card-blue {
+  right: -72%;
+  border: 5px solid rgb(0, 48, 96);
+  border-left-width: 25px;
+  justify-content: flex-start;
+}
+.champ-card-blue:hover {
+  box-shadow: 0px 0px 400px rgb(62, 154, 245);
+  border-color: rgb(62, 154, 245);
+  z-index: 3;
+}
+.blue-active {
+  transition: all 1s;
+  right: -12%;
+}
+.blue-inactive {
+  transition: all 1s;
+  right: -72%;
+}
+/* champ quotes  */
+.chat {
+  width: 300px;
+  height: 200px;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: skewX(20deg);
+}
+h2 {
+  color: #c4942c;
+}
+/* board game components */
+.win-card {
+  position: absolute;
+  color: white;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  top: 25vh;
+  left: 30vw;
+  width: 40%;
+  height: 50%;
+  background-color: rgb(25, 25, 25);
+  border: 8px solid crimson;
+  border-radius: 50% 20% / 10% 40%;
+}
+.win-champ {
+  border-radius: 50% 20% / 10% 40%;
+}
+.blue-win {
+  border-color: dodgerblue;
+}
+.win-champ-red {
+  background-image: url("./assets/images/zed-win.jpg");
+}
+.win-champ-blue {
+  background-image: url("./assets/images/yasuo-win.jpg");
+}
+.game-status {
+  display: none;
+  margin: 50px auto;
+}
+.status-btn {
+  background-image: linear-gradient(
+    -45deg,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.2)
+  );
+  position: relative;
+  color: white;
+  width: 300px;
+  height: 100px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #c4942c;
+  border-radius: 50% 20% / 10% 40%;
+}
+.game-restart {
+  display: none;
+  margin: 130px auto;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.7)
+  );
+}
+.battleground {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 300px;
+  margin: 1% auto;
+  gap: 5px;
+  display: none;
+}
+.cell {
+  border: 4px solid #c4942c;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.7)
+  );
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50% 20% / 10% 40%;
+}
+.cell:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 30px #c4942c;
+}
+.icon {
+  width: 90px;
+  height: 90px;
+}
+.icon > img {
+  width: 100%;
+  height: 100%;
+}
+/* snow flacks*/
+span {
+  position: absolute;
+  top: -5%;
+  left: 50%;
+  width: 3px;
+  height: 3px;
+  color: white;
+  border-radius: 50%;
+  animation: stars 2s linear infinite;
+}
+span:nth-child(1) {
+  right: 1300px;
+  left: initial;
+  animation-delay: 0;
+  animation-duration: 1s;
+}
+
+span:nth-child(2) {
+  right: 2400px;
+  left: initial;
+  animation-delay: 0.2s;
+  animation-duration: 3s;
+}
+span:nth-child(3) {
+  right: 1000px;
+  left: initial;
+  animation-delay: 0.4s;
+  animation-duration: 2s;
+}
+span:nth-child(4) {
+  right: 180px;
+  left: initial;
+  animation-delay: 0.6s;
+  animation-duration: 1.5s;
+}
+span:nth-child(5) {
+  right: 400px;
+  left: initial;
+  animation-delay: 0.8s;
+  animation-duration: 2.5s;
+}
+span:nth-child(6) {
+  right: 600px;
+  left: initial;
+  animation-delay: 0.3s;
+  animation-duration: 1.75s;
+}
+span:nth-child(7) {
+  right: 700px;
+  left: initial;
+  animation-delay: 1.4s;
+  animation-duration: 1.25s;
+}
+span:nth-child(8) {
+  right: 900px;
+  left: initial;
+  animation-delay: 0s;
+  animation-duration: 2s;
+}
+span:nth-child(9) {
+  right: 1500px;
+  left: initial;
+  animation-delay: 1s;
+  animation-duration: 4s;
+}
+span:nth-child(11) {
+  right: -200px;
+  left: initial;
+  animation-delay: 1s;
+  animation-duration: 1.1s;
+}
+span:nth-child(12) {
+  right: 0px;
+  left: initial;
+  animation-delay: 1s;
+  animation-duration: 1.6s;
+}
+span:nth-child(13) {
+  right: -400px;
+  left: initial;
+  animation-delay: 2s;
+  animation-duration: 1.3s;
+}
+span:nth-child(14) {
+  right: -500px;
+  left: initial;
+  animation-delay: 1s;
+  animation-duration: 3s;
+}
+span:nth-child(15) {
+  right: -50px;
+  left: initial;
+  animation-delay: 0s;
+  animation-duration: 0.9s;
+}
+/* snowing animation */
+@keyframes stars {
+  0% {
+    transform: rotate(315deg) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(315deg) translateX(-1000px);
+    opacity: 0;
+  }
+}
