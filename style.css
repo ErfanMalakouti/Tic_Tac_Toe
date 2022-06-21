@@ -79,7 +79,7 @@ body {
 }
 /* Red */
 .champ-red {
-  background-image: url(./assets/images/Zed.jpg);
+  background-image: url(./assets/images/zed.jpg);
 }
 .champ-card-red {
   border: 5px solid rgb(148, 1, 1);
@@ -102,7 +102,7 @@ body {
 }
 /* Blue */
 .champ-blue {
-  background-image: url(./assets/images/Yasuo.jpg);
+  background-image: url(./assets/images/yasuo.jpg);
 }
 .champ-card-blue {
   right: -72%;
